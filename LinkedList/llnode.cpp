@@ -5,7 +5,7 @@ LLNode::LLNode()
 {
     this->value = 0;
     this->next = nullptr;
-}LinkedList
+}
 
 LLNode::LLNode(int value) {
     this->value = value;
