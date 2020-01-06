@@ -11,8 +11,9 @@ public:
     std::vector<int> getSize();
     int getElementAt(int row, int column);
     void setElementAt(int row, int column, int value);
+    Matrix subMatrix(int row, int col, int rowSize, int colSize);
     int det();
-
+    int getMax();
     void print();
 
 
