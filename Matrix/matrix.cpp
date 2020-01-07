@@ -99,7 +99,13 @@ void Matrix::setElementAt(int row, int column, int value) {
     this->data.at(row-1).at(column-1) = value;
 }
 
+/**
+ * @brief Matrix::det   Returns the determinant of a square matrix. Throws an exception if the matrix is not square.
+ */
 int Matrix::det() {
+    if (this->getSize().at(0) != this->getSize().at(1))
+        throw std::invalid_argument("Determinant of non-square matrix is not defined.");
+
     int determinant = 0;
     int rows = this->getSize().at(0);
     int cols = this->getSize().at(1);
@@ -122,9 +128,8 @@ int Matrix::det() {
             }
         }
 
-
         int neg = (i % 2 == 0 ? -1 : 1);
-        determinant += neg * this->getElementAt(1,i)*s.det();
+        determinant += neg * this->getElementAt(1,i) * s.det();
     }
     return determinant;
 }
