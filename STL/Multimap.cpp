@@ -29,9 +29,6 @@ int main() {
     for (multimap<int,string>::iterator it=its.first;it!=its.second;it++) {
         cout << it->first << ": " << it->second << endl; 
     }
-    
-
-
 
     return 0;
 }
